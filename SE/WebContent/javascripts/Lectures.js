@@ -17,7 +17,6 @@ function getAddLecturePage(){
 	document.getElementById('listingAndDeletingSection').style.display ='none';
 	//document.getElementById('firstPageSection').style.display ='none';
 	document.getElementById('addLectureBtn').style.display ='none';
-	
 }
 
 function getListPage(){
@@ -26,7 +25,6 @@ function getListPage(){
 	document.getElementById('lecturesNotFound').style.display ='none';
 	document.getElementById('listingAndDeletingSection').style.display ='none';
 	listLectures();
-	//document.getElementById('firstPageSection').style.display ='block';
 }
 
 function addLecture() {
@@ -82,7 +80,7 @@ function addLecture() {
 
 
 function listLectures(){
-	document.getElementById('lectures').style.display = 'block';
+	document.getElementById('lecturesDiv').style.display = 'block';
 	clearTable();
 	if(lectures.length > 0){
 		
@@ -128,9 +126,12 @@ function listLectures(){
 
 		    table.appendChild(tr);
 		    
-		    document.getElementById('listingAndDeletingSection').style.display ='block';
-		    document.getElementById('addLectureBtn').style.display ='block';
+		    
 		}
+		
+		document.getElementById('listingAndDeletingSection').style.display ='block';
+	    document.getElementById('addLectureBtn').style.display ='block';
+	    
 	}else{
 		
 		document.getElementById('addLectureBtn').style.display ='block';

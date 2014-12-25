@@ -11,97 +11,104 @@
 </head>
 <body>
 
-	<header>
-
-		<div style="width: 400px; float: left; margin-left: 300px;">
-			Welcome to Learning Management System</div>
-
-		<div style="clear: both;"></div>
-		<div style="float: right;" id="authentication">
-
-			<a href="#">Login</a> <a href="#">Sign Up</a>
-
-		</div>
-
-
-	</header>
-
-	<aside>
-
-		<ul>
-			<li><a href="#" onclick="listLectures()">Lectures</a></li>
-			<li><a href="#">Announcements</a></li>
-			<li><a href="#">Files</a></li>
-			<li><a href="#">Grades (only for stundents)</a></li>
-			<li><a href="#">Exams</a></li>
-		</ul>
-
-	</aside>
-
-	<section class="container">
-
-		<div id="lectures" style="none;">
-			<!-- adding section-->
-			<div id="addingSection" style="display: none;">
-
-				<form>
-					
-					<label for="lectureName">Lecture Name:</label> 
-					<input id="lectureName" type="text" size="20" required="required">
-					<br>
-					
-					<label for="lectureCredit">Lecture Credit:</label> 
-					<input id="lectureCredit" type="number" size="20" maxlength="1"
-						required="required">
-					<br> 
-					
-					<label for="lectureCode">LectureCode:</label> 
-					<input id="lectureCode" type="text" size="20" maxlength="5"
-						required="required">
-					<br>
-					 	
-					<input id="submitButton" type="button" value="Submit"> 
-					<input id="backButton" type="button" value="Back">
-					
-				</form>
-			</div>
+	<div class="bgDiv">
+	
+		<header>
+			<div class="logo">
 			
-			<br>
+	    		<h3 class="underline">Learning Managment System</h3>
+    	   </div>  
+    	   
+    	   <div style="clear: both;"></div>
+				<div style="float: right;" id="authentication">
+		
+				<a href="#">Login</a> <a href="#">Sign Up</a>
 
-			<!-- listing and deleting section-->
-			<div id="listingAndDeletingSection" style="display: none;">
+			</div>
 
-				<div id="lectures">
-					<table id="lectures">
-						<tr>
-							<th>Code</th>
-							<th>Lecture Name</th>
-							<th>Credit</th>
-							<th>-</th>
-						</tr>
-
-					</table>
+		</header>
+		
+				<aside>
+		
+				<nav class="vertical menu">
+						<ul>
+							<li><a href="#" onclick="listLectures()">Lectures</a></li>
+							<li><a href="#">Announcements</a></li>
+							<li><a href="#">Files</a></li>
+							<li><a href="#">Grades</a></li>
+							<li><a href="#">Exams</a></li>
+						</ul>
+				</nav>
+		
+				</aside>
+		
+				<div class="container">
+			
+					<div id="lecturesDiv" style="display:none;">
+						<!-- adding section-->
+						<div id="addingSection" style="display: none;">
+			
+							<form>
+								
+								<label for="lectureName">Lecture Name:</label> 
+								<input id="lectureName" type="text" size="20" required="required">
+								<br><br>
+								
+								<label for="lectureCredit">Lecture Credit:</label> 
+								<input id="lectureCredit" type="number" size="20" maxlength="1"
+									required="required">
+								<br> <br>
+								
+								<label for="lectureCode">LectureCode:</label> 
+								<input id="lectureCode" type="text" size="20" maxlength="5"
+									required="required">
+								<br><br>
+								 	
+								<input id="submitButton" type="submit" value="Submit"> 
+								<input id="backButton" type="submit" value="Back">
+								
+							</form>
+						</div>
+						
+						<br>
+			
+						<!-- listing and deleting section-->
+						<div id="listingAndDeletingSection" style="display: none;">
+			
+							<div id="lectures">
+								<table id="lectures">
+									<tr>
+										<th>Code</th>
+										<th>Lecture Name</th>
+										<th>Credit</th>
+										<th>-</th>
+									</tr>
+			
+								</table>
+							</div>
+			
+						</div>
+						<br>
+			
+						<div id="lecturesNotFound" style="display: none;">
+							<h5>
+								No Lectures to Show!
+							</h5>
+						</div>
+						<br>
+			
+			
+						<div id="addLectureBtn" style="display: none;">
+							<button onclick="getAddLecturePage()">Add Lecture</button>
+						</div>
+						<br>
+					</div>
+			
 				</div>
-
-			</div>
-			<br>
-
-			<div id="lecturesNotFound" style="display: none;">
-				<h5>
-					No Lectures to Show!
-				</h5>
-			</div>
-			<br>
-
-
-			<div id="addLectureBtn" style="display: none;">
-				<input type="button" onclick="getAddLecturePage()"
-					value="Add Lecture" />
-			</div>
-			<br>
-		</div>
-
-	</section>
-
+					
+			
+	</div>
+	
+	
 </body>
 </html>
