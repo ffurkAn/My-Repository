@@ -1,6 +1,8 @@
 
 var currentId = 1;
 var lectures = [];
+var users = [["furkan", "furkan123"],
+             ["alacamer", "falaca"]];
 
 window.onload=function() {
   var submitbtn = document.getElementById("submitButton");
@@ -8,7 +10,72 @@ window.onload=function() {
   
   var backbtn =  document.getElementById("backButton");
   backbtn.onclick = getListPage;
+  
+  var loginbtn =  document.getElementById("loginButton");
+  loginbtn.onclick = login;
+  
+  var finishbtn =  document.getElementById("finishButton");
+  finishbtn.onclick = finish;
+  
+  var cancelbtn1 =  document.getElementById("cancelSignUp");
+  cancelbtn1.onclick = cancelSignUp;
+  
+  var cancelbtn2 =  document.getElementById("cancelSignIn");
+  cancelbtn2.onclick = cancelSignUp;
 }   
+
+function signIn(){
+	
+	document.getElementById('signIn').style.display = 'block';
+}
+
+function signUp(){
+	
+	document.getElementById('signUp').style.display = 'block';
+}
+
+
+function login(){
+	
+	var textInput = document.getElementById("username2");  //getting text input
+	var username = textInput.value;   //getting value of text input element
+	
+	var textInput = document.getElementById("password2");  //getting text input
+	var password = textInput.value;   //getting value of text input element
+	
+	for(i = 0; i < users.length; i++){
+		
+		if(users[i][0] == username && users[i][1] == password){
+			
+			document.getElementById('signIn').style.display = 'none';
+			document.getElementById('signUp').style.display = 'none';
+			document.getElementById('mainPage').style.display = 'block';
+		}
+	}
+}
+
+function finish(){
+	
+	var textInput = document.getElementById("lectureCode");  //getting text input
+	var lectureCode = textInput.value;   //getting value of text input element
+	
+	document.getElementById('signIn').style.display = 'none';
+	document.getElementById('signUp').style.display = 'none';
+	document.getElementById('mainPage').style.display = 'block';
+}
+
+function cancelSignUp(){
+	
+	document.getElementById('signIn').style.display = 'none';
+	document.getElementById('signUp').style.display = 'none';
+}
+
+function cancelSignUp(){
+	
+	document.getElementById('signIn').style.display = 'none';
+	document.getElementById('signUp').style.display = 'none';
+}
+
 
 function getAddLecturePage(){
 	

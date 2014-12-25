@@ -39,6 +39,14 @@ aside nav {
 	padding: 20px 40px 20px 10px;
 }
 
+.signUpIn {
+
+	text-align: center;
+	min-height: 480px;
+	margin: 20px 40px 20px 100px;
+	padding-right: 0px;
+}
+
 section h2 {
 	font: 14pt Helvetica, "Helvetica neue", Arial, sans-serif;
 	font-weight: lighter;
@@ -291,18 +299,21 @@ form label{
 }
 form input[type=text],
 form input[type=password],
-form input[type=number]{
+form input[type=number],
+form input[type=button]{
 	width:180px;
 	
 }
 form input[type=text],
 form input[type=password],
-form input[type=number],textarea{
+form input[type=number],
+form input[type=button],textarea{
 	border:1px solid #ddd;	
 }
 form input[type=text],
 form input[type=password],
-form input[type=number],textarea{
+form input[type=number],
+form input[type=button],textarea{
 	-webkit-appearance:none;
 	-moz-appearance:none;
 }
@@ -326,7 +337,8 @@ label.inline{
 form label span.red{
 	color:#ff0000;
 }
-form input[type=submit]{
+form input[type=submit],
+form input[type=button]{
 	background: #e4f5fc;
 	background: -moz-linear-gradient(top,  #e4f5fc 0%, #d7ebf4 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e4f5fc), color-stop(100%,#d7ebf4));
@@ -349,7 +361,8 @@ form input[type=submit]:hover{
 form input[type=text],
 form input[type=password],
 form input[type=number],
-form textarea{
+form textarea,
+form input[type=button]{
 	padding:5px;
 	-webkit-border-radius:.3em;
 	   -moz-border-radius:.3em;

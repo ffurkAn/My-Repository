@@ -14,99 +14,140 @@
 	<div class="bgDiv">
 	
 		<header>
-			<div class="logo">
+		   <div class="logo">
 			
 	    		<h3 class="underline">Learning Managment System</h3>
     	   </div>  
     	   
     	   <div style="clear: both;"></div>
-				<div style="float: right;" id="authentication">
+			
+			<div style="float: right;" id="authentication">
 		
-				<a href="#">Login</a> <a href="#">Sign Up</a>
+				<a href="#" onclick="signIn()">Login</a> 
+				<a href="#" onclick="signUp()">Sign Up</a>
 
 			</div>
 
 		</header>
 		
-				<aside>
+		<div class="signUpIn" id="signUp" style="display: none;">
+
+			<form>
+
+				<label for="username">Username:</label> 
+				<input id="username1" type="text" size="20" required="required">
+				<br><br>
+				 
+				<label for="password">Password:</label> 
+				<input id="password1" type="password" size="20" minlength="10"
+					required="required"> 
+				<br><br> 
+ 
+				<input id="finishButton" type="submit" value="Finish">
+				<input id="cancelSignUp" type="button" value="Cancel">
+
+			</form>
+
+		</div>
 		
+		<div class="signUpIn" id="signIn" style="display: none;">
+
+			<form>
+
+				<label for="username">Username:</label> 
+				<input id="username2" type="text" size="20" required="required">
+				<br><br>
+				 
+				<label for="password">Password:</label> 
+				<input id="password2" type="password" size="20" minlength="10"
+					required="required"> 
+				<br><br> 
+ 
+				<input id="loginButton" type="submit" value="Login">
+				<input id="cancelSignIn" type="button" value="Cancel">
+
+			</form>
+
+		</div>
+		
+		<div></div>
+
+		<div id="mainPage" style="display: none;">
+			<aside>
+
 				<nav class="vertical menu">
-						<ul>
-							<li><a href="#" onclick="listLectures()">Lectures</a></li>
-							<li><a href="#">Announcements</a></li>
-							<li><a href="#">Files</a></li>
-							<li><a href="#">Grades</a></li>
-							<li><a href="#">Exams</a></li>
-						</ul>
+					<ul>
+						<li><a href="#" onclick="listLectures()">Lectures</a></li>
+						<li><a href="#">Announcements</a></li>
+						<li><a href="#">Files</a></li>
+						<li><a href="#">Grades</a></li>
+						<li><a href="#">Exams</a></li>
+					</ul>
 				</nav>
-		
-				</aside>
-		
-				<div class="container">
-			
-					<div id="lecturesDiv" style="display:none;">
-						<!-- adding section-->
-						<div id="addingSection" style="display: none;">
-			
-							<form>
-								
-								<label for="lectureName">Lecture Name:</label> 
-								<input id="lectureName" type="text" size="20" required="required">
-								<br><br>
-								
-								<label for="lectureCredit">Lecture Credit:</label> 
-								<input id="lectureCredit" type="number" size="20" maxlength="1"
-									required="required">
-								<br> <br>
-								
-								<label for="lectureCode">LectureCode:</label> 
-								<input id="lectureCode" type="text" size="20" maxlength="5"
-									required="required">
-								<br><br>
-								 	
-								<input id="submitButton" type="submit" value="Submit"> 
-								<input id="backButton" type="submit" value="Back">
-								
-							</form>
-						</div>
-						
-						<br>
-			
-						<!-- listing and deleting section-->
-						<div id="listingAndDeletingSection" style="display: none;">
-			
-							<div id="lectures">
-								<table id="lectures">
-									<tr>
-										<th>Code</th>
-										<th>Lecture Name</th>
-										<th>Credit</th>
-										<th>-</th>
-									</tr>
-			
-								</table>
-							</div>
-			
-						</div>
-						<br>
-			
-						<div id="lecturesNotFound" style="display: none;">
-							<h5>
-								No Lectures to Show!
-							</h5>
-						</div>
-						<br>
-			
-			
-						<div id="addLectureBtn" style="display: none;">
-							<button onclick="getAddLecturePage()">Add Lecture</button>
-						</div>
-						<br>
+
+			</aside>
+
+
+
+			<div class="container">
+
+				<div id="lecturesDiv" style="display: none;">
+					<!-- adding section-->
+					<div id="addingSection" style="display: none;">
+
+						<form>
+
+							<label for="lectureName">Lecture Name:</label> <input
+								id="lectureName" type="text" size="20" required="required">
+							<br>
+							<br> <label for="lectureCredit">Lecture Credit:</label> <input
+								id="lectureCredit" type="number" size="20" maxlength="1"
+								required="required"> <br> <br> <label
+								for="lectureCode">LectureCode:</label> <input id="lectureCode"
+								type="text" size="20" maxlength="5" required="required">
+							<br>
+							<br> <input id="submitButton" type="submit" value="Submit">
+							<input id="backButton" type="submit" value="Back">
+
+						</form>
 					</div>
-			
+
+					<br>
+
+					<!-- listing and deleting section-->
+					<div id="listingAndDeletingSection" style="display: none;">
+
+						<div id="lectures">
+							<table id="lectures">
+								<tr>
+									<th>Code</th>
+									<th>Lecture Name</th>
+									<th>Credit</th>
+									<th>-</th>
+								</tr>
+
+							</table>
+						</div>
+
+					</div>
+					<br>
+
+					<div id="lecturesNotFound" style="display: none;">
+						<h5>No Lectures to Show!</h5>
+					</div>
+					<br>
+
+
+					<div id="addLectureBtn" style="display: none;">
+						<button onclick="getAddLecturePage()">Add Lecture</button>
+					</div>
+					<br>
 				</div>
-					
-			
+
+			</div>
+		</div>
+
+
 	</div>
 	
 	
