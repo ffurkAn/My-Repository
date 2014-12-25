@@ -1,0 +1,98 @@
+table, td, th {
+	border: 1px solid black;
+}
+
+td, th {
+	width: 100px;
+}
+
+aside {
+	min-height: 480px;
+	border: 2px solid black;
+	width: 20%;
+	margin: 20px 40px 20px 10px;
+	padding: 20px 40px 20px 10px;
+	float: left;
+}
+
+.container {
+	float: left;
+	border-left: 2px dotted #b2a497;
+	text-align: center;
+	border: 2px solid green;
+	min-height: 480px;
+	width: 540px;
+	margin: 20px 40px 20px 10px;
+	padding: 20px 40px 20px 10px;
+}
+
+section h2 {
+	font: 14pt Helvetica, "Helvetica neue", Arial, sans-serif;
+	font-weight: lighter;
+	text-transform: uppercase;
+	color: #493831;
+	padding-bottom: 10px;
+	margin: 0;
+}
+
+header {
+	border: 2px solid red;
+	height: 50px;
+	margin: 20px 40px 20px 10px;
+	padding: 20px 40px 20px 10px;
+}
+
+footer {
+	clear: both !important;
+	width: 940px;
+	height: 100px;
+	padding: 10px;
+	color: #200f08;
+	background: #ddd3bf;
+	/*Opacity*/
+	filter: alpha(opacity = 50); /* msie */
+	-moz-opacity: 0.50; /* firefox 1.0 */
+	-khtml-opacity: 0.50; /* webkit */
+	opacity: 0.50; /* css 3 */
+	/*Gradient*/
+	background-image: -moz-linear-gradient(top, #ddd3bf, #bcae91);
+	/* FF3.6 */
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ddd3bf),
+		color-stop(1, #bcae91)); /* Saf4+, Chrome *
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#ddd3bf', EndColorStr='#bcae91'); /* IE6,IE7 */
+	-ms-filter:
+		"progid:DXImageTransform.Microsoft.gradient(startColorStr='#ddd3bf', EndColorStr='#bcae91')";
+	/* IE8 */
+	/*Round corners*/
+	-moz-border-radius: 12px; /* FF1+ */
+	-webkit-border-radius: 12px; /* Saf3+, Chrome */
+	border-radius: 12px; /* Opera 10.5, IE 9 */
+}
+
+h1 {
+	font: 32pt Helvetica, "Helvetica neue", Arial, sans-serif;
+	background: url(../images/header-bg.png) center top no-repeat;
+	text-align: center;
+	text-transform: uppercase;
+	color: #e5b7ad;
+	padding-top: 30px;
+	text-shadow: 1px 1px 2px #fff;
+}
+
+body {
+	width: 940px;
+	margin: 0 auto;
+	font: 10pt/1.5em Helvetica, "Helvetica neue", Arial, sans-serif;
+}
+
+/*HTML 5 specific*/
+header, section, article, aside, footer {
+	display: block;
+}
+
+/*Layout*/
+html {
+	margin: 0;
+	padding: 0;
+	background: #eee9df;
+}
