@@ -11,6 +11,9 @@ window.onload=function() {
   var backbtn =  document.getElementById("backButton");
   backbtn.onclick = getListPage;
   
+  var backbtn2 =  document.getElementById("backButton2");
+  backbtn2.onclick = getListPage;
+  
   var loginbtn =  document.getElementById("loginButton");
   loginbtn.onclick = login;
   
@@ -22,6 +25,12 @@ window.onload=function() {
   
   var cancelbtn2 =  document.getElementById("cancelSignIn");
   cancelbtn2.onclick = cancelSignUp;
+  
+  var att =  document.getElementById("attendance");
+  att.onclick = getAttendance;
+  
+  var succ =  document.getElementById("success");
+  succ.onclick = getSuccess;
 }   
 
 function signIn(){
@@ -33,6 +42,7 @@ function signUp(){
 	
 	document.getElementById('signUp').style.display = 'block';
 }
+
 
 
 function login(){
@@ -47,21 +57,38 @@ function login(){
 		
 		if(users[i][0] == username && users[i][1] == password){
 			
+			alert("Successfully Loged In!");
+			
 			document.getElementById('signIn').style.display = 'none';
 			document.getElementById('signUp').style.display = 'none';
 			document.getElementById('mainPage').style.display = 'block';
+			
 		}
 	}
 }
 
+
 function finish(){
 	
-	var textInput = document.getElementById("lectureCode");  //getting text input
-	var lectureCode = textInput.value;   //getting value of text input element
+	var textInput = document.getElementById("username1");  //getting text input
+	var username = textInput.value;   //getting value of text input element
+	
+	var textInput = document.getElementById("password1");  //getting text input
+	var password = textInput.value;   //getting value of text input element
+	
+	var row = [];
+	
+	row.push(username);
+	row.push(password);
+	users.push(row);
+	
+	alert("Registeration Completed!");
 	
 	document.getElementById('signIn').style.display = 'none';
 	document.getElementById('signUp').style.display = 'none';
-	document.getElementById('mainPage').style.display = 'block';
+	document.getElementById('mainPage').style.display = 'none';
+	
+	
 }
 
 function cancelSignUp(){
@@ -91,6 +118,8 @@ function getListPage(){
 	document.getElementById('addingSection').style.display ='none';
 	document.getElementById('lecturesNotFound').style.display ='none';
 	document.getElementById('listingAndDeletingSection').style.display ='none';
+	document.getElementById('reportButtons').style.display ='none';
+	
 	listLectures();
 }
 
@@ -161,19 +190,34 @@ function listLectures(){
 		    var td2 = document.createElement('td');
 		    var td3 = document.createElement('td');
 		    var td4 = document.createElement('td');
+		    var td5 = document.createElement('td');
 		    
-		    var a = document.createElement('a');
+		    var ad = document.createElement('a');
+			// var currentId = "ders"+(i+1);
+			
+		    ad.setAttribute("id",lectures[i][0]);
+			currentId++;
+			ad.href        = "#";
+			ad.textContent = "delete";
+			
+			ad.onclick = function() { 
+				
+				deleteLecture(this);
+			}
+			
+			var a = document.createElement('a');
 			// var currentId = "ders"+(i+1);
 			
 			a.setAttribute("id",lectures[i][0]);
 			currentId++;
 			a.href        = "#";
-			a.textContent = "delete";
+			a.textContent = "report";
 			
 			a.onclick = function() { 
 				
-				deleteLecture(this);
+				getReport();
 			}
+			
 			
 
 		    var text1 = document.createTextNode(lectures[i][0]);
@@ -184,13 +228,15 @@ function listLectures(){
 		    td1.appendChild(text1);
 		    td2.appendChild(text2);
 		    td3.appendChild(text3);
-		    td4.appendChild(a);
+		    td4.appendChild(ad);
+		    td5.appendChild(a);
 		    
 		    tr.appendChild(td1);
 		    tr.appendChild(td2);
 		    tr.appendChild(td3);
 		    tr.appendChild(td4);
-
+		    tr.appendChild(td5);
+		    
 		    table.appendChild(tr);
 		    
 		    
@@ -216,6 +262,29 @@ function clearTable(){
 	for (var x=rowCount-1; x>0; x--) {
 	   elmtTable.removeChild(tableRows[x]);
 	}
+}
+
+function getReport(){
+	
+	document.getElementById('addingSection').style.display ='none';
+	document.getElementById('lecturesNotFound').style.display ='none';
+	document.getElementById('listingAndDeletingSection').style.display ='none';
+	//document.getElementById('firstPageSection').style.display ='none';
+	document.getElementById('addLectureBtn').style.display ='none';
+	document.getElementById('reportButtons').style.display ='block';
+		
+}
+
+function getAttendance() {
+	
+	document.getElementById('attendanceIMG').style.display ='block';
+	document.getElementById('successIMG').style.display ='none';
+}
+
+function getSuccess() {
+	
+	document.getElementById('successIMG').style.display ='block';
+	document.getElementById('attendanceIMG').style.display ='none';
 }
 
 function deleteLecture(a){
