@@ -1,0 +1,6 @@
+Body içine section section usecaseleri yapabilirseniz yapýn.
+bazý uc'ler birleþik olabilir. Mesela bn listelerke delete butonu koyduðum için ayný section
+içinde oldu.
+
+fonksiyonel olmýcaktý ama sadece html ile olmaz. illaki navigasyon için 
+jQuery yada JavaScript kullanmak gerekicek. problem olursa zaten konusuruz.
