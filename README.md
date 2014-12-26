@@ -1,6 +1,4 @@
 My-Repository
 =============
 
-my description
-
-readme.md edited
+This repository was created for ONLY test usage.
