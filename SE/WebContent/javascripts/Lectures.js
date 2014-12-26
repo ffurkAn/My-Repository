@@ -4,6 +4,10 @@ var lectures = [];
 var users = [["furkan", "furkan123"],
              ["alacamer", "falaca"]];
 
+var file = [{"firstName":"John", "lastName":"Doe"}, 
+            {"firstName":"Anna", "lastName":"Smith"}, 
+            {"firstName":"Peter", "lastName":"Jones"}];
+
 window.onload=function() {
   var submitbtn = document.getElementById("submitButton");
   submitbtn.onclick = addLecture;
@@ -32,6 +36,16 @@ window.onload=function() {
   var succ =  document.getElementById("success");
   succ.onclick = getSuccess;
 }   
+
+function download(){
+	
+	   alert("Download Successful");
+}
+
+function upload(obj){
+	
+	 alert(obj + " - Upload Successful");
+}
 
 function signIn(){
 	
@@ -148,29 +162,7 @@ function addLecture() {
 	
 	alert("Lecture added successfully!\n Name:"+lectureName+"\nCredit:"+lectureCredit+"\nCode"+lectureCode);
 	
-	/*
-	var ul = document.getElementById("ul");  //getting element <ul> to add element to
-	var li = document.createElement("li");  //creating li element to add
-	li.setAttribute("style", "width:300px;");
-	li.appendChild(document.createTextNode(text));    //inserting text into newly created <li> element
 	
-	
-	var a = document.createElement('a');
-	//var currentId = "ders"+(i+1);
-	
-	a.setAttribute("id", "ders"+currentId)
-	a.href        = "#";
-	a.textContent = "delete";
-	a.setAttribute("style", "float:right;")
-	
-	a.onclick = function() { 
-		
-		deletelecture(this);
-	}
-	
-	li.appendChild(a);
-	ul.appendChild(li);
-	*/
 }
 
 
@@ -191,6 +183,8 @@ function listLectures(){
 		    var td3 = document.createElement('td');
 		    var td4 = document.createElement('td');
 		    var td5 = document.createElement('td');
+		    var td6 = document.createElement('td');
+		    var td7 = document.createElement('td');
 		    
 		    var ad = document.createElement('a');
 			// var currentId = "ders"+(i+1);
@@ -205,10 +199,37 @@ function listLectures(){
 				deleteLecture(this);
 			}
 			
+			var adown = document.createElement('a');
+			// var currentId = "ders"+(i+1);
+			
+			//adown.setAttribute("id",lectures[i][0]);
+			currentId++;
+			var blob = new Blob([file], {type: "application/text"});
+			var url  = URL.createObjectURL(blob);
+			
+			adown.href        = "#";
+			adown.textContent = "download docs";
+			adown.download = "download.txt"; 
+			
+		
+			
+			var aup = document.createElement('a');
+			// var currentId = "ders"+(i+1);
+			
+			//adown.setAttribute("id",lectures[i][0]);
+			currentId++;
+			aup.href        = "#";
+			aup.textContent = "upload doc(s)";
+			
+			aup.onclick = function() { 
+				
+				upload("fileObj");
+			}
+			
 			var a = document.createElement('a');
 			// var currentId = "ders"+(i+1);
 			
-			a.setAttribute("id",lectures[i][0]);
+			//a.setAttribute("id",lectures[i][0]);
 			currentId++;
 			a.href        = "#";
 			a.textContent = "report";
@@ -230,12 +251,16 @@ function listLectures(){
 		    td3.appendChild(text3);
 		    td4.appendChild(ad);
 		    td5.appendChild(a);
+		    td6.appendChild(adown);
+		    td7.appendChild(aup);
 		    
 		    tr.appendChild(td1);
 		    tr.appendChild(td2);
 		    tr.appendChild(td3);
-		    tr.appendChild(td4);
+		    tr.appendChild(td6);
+		    tr.appendChild(td7);
 		    tr.appendChild(td5);
+		    tr.appendChild(td4);
 		    
 		    table.appendChild(tr);
 		    
