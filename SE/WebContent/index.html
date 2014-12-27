@@ -80,7 +80,7 @@
 						<li><a href="#" onclick="listLectures()">Lectures</a></li>
 						<li><a href="#">Announcements</a></li>
 						<li><a href="#">Grades</a></li>
-						<li><a href="#">Exams</a></li>
+						<li><a href="#" onclick="listExams()">Exams</a></li>
 					</ul>
 				</nav>
 
@@ -124,6 +124,7 @@
 									<th>Credit</th>
 									<th>Get Report</th>
 									<th>Download Documents</th>
+									<th>New Exam</th>
 									<th>-</th>
 								</tr>
 
@@ -154,6 +155,128 @@
 						
 						<input id="backButton2" type="submit" value="Back" style="display:block">
 					</div>
+				</div>
+				
+				<!-- Message box for alerts -->
+				<div id="message-box"></div>
+				
+				<!-- Add Exam -->
+				<div id="create-exam-container" style="display: none">Exam name
+					<input type="text">
+					<button id="btn-create-exam" onclick="createExam()">Create exam</button>
+				</div>
+				<br>
+				<div id="question-container" style="display: none">
+					<div>Question
+						<br>
+						<textarea id="question" rows="4" cols="50"></textarea>
+					</div>
+					<div>A)
+						<input type="text" id="choice-1">
+						<br>B)
+						<input type="text" id="choice-2">
+						<br>C)
+						<input type="text" id="choice-3">
+						<br>D)
+						<input type="text" id="choice-4">
+						<br>
+					</div>
+					<div>
+						<button id="btn-add-question" onclick="addQuestion()">Add question</button>
+					</div><br>
+						<div id="exam-questions-container"></div><br>
+					<div>
+						<button id="btn-save-exam" onclick="saveExam()">Save exam</button>
+					</div>
+				</div>
+				
+				<!-- Solve Exam -->
+				<div id="calendar-container" style="display: none">
+					<img src="stylesheets/images/calendar.jpg" width="100%" onclick="showExam()">
+				</div>
+				<br>
+				<div id="exam-container" style="display: none">
+					<div>
+						<b>Lorem ipsum dolor sit amet, te everti impedit gubergren has, enim dicant labore ex duo, sed nemore commodo platonem et. Etiam semper maiestatis cu quo, audire tibique deterruisset cum ea, vide dolor placerat no vim. Mea ut soluta eruditi expetenda. Vis an munere possim explicari, est no etiam graeco civibus?</b>
+					</div>
+					<div>
+						<input type="radio" name="choice1">
+						A) Vel an illud molestie lobortis
+						<br>
+						<input type="radio" name="choice1">
+						B) Sit idque efficiantur et, vix ex ceteros qualisque
+						<br>
+						<input type="radio" name="choice1">
+						C) Ea est brute dicant molestie
+						<br>
+						<input type="radio" name="choice1">
+						D) No eam veritus incorrupte
+						<br>
+					</div><br><br>
+					<div>
+						<b>Lorem ipsum dolor sit amet, te everti impedit gubergren has, enim dicant labore ex duo, sed nemore commodo platonem et. Etiam semper maiestatis cu quo, audire tibique deterruisset cum ea, vide dolor placerat no vim. Mea ut soluta eruditi expetenda. Vis an munere possim explicari, est no etiam graeco civibus?</b>
+					</div>
+					<div>
+						<input type="radio" name="choice2">
+						A) Vel an illud molestie lobortis
+						<br>
+						<input type="radio" name="choice2">
+						B) Sit idque efficiantur et, vix ex ceteros qualisque
+						<br>
+						<input type="radio" name="choice2">
+						C) Ea est brute dicant molestie
+						<br>
+						<input type="radio" name="choice2">
+						D) No eam veritus incorrupte
+						<br>
+					</div><br><br>
+					<div>
+						<b>Lorem ipsum dolor sit amet, te everti impedit gubergren has, enim dicant labore ex duo, sed nemore commodo platonem et. Etiam semper maiestatis cu quo, audire tibique deterruisset cum ea, vide dolor placerat no vim. Mea ut soluta eruditi expetenda. Vis an munere possim explicari, est no etiam graeco civibus?</b>
+					</div>
+					<div>
+						<input type="radio" name="choice3">
+						A) Vel an illud molestie lobortis
+						<br>
+						<input type="radio" name="choice3">
+						B) Sit idque efficiantur et, vix ex ceteros qualisque
+						<br>
+						<input type="radio" name="choice3">
+						C) Ea est brute dicant molestie
+						<br>
+						<input type="radio" name="choice3">
+						D) No eam veritus incorrupte
+						<br>
+					</div><br><br>
+					<div>
+						<button id="btn-save-exam" onclick="saveAnswers()">Save exam</button>
+					</div>
+				</div>
+				
+				<!-- Enrolling to Lecture -->
+				<div id="lecture-container" style="display: none">
+					<p><a href="#" onclick="enrollLecture(1)">Software Engineering</a>
+					<p><a href="#" onclick="enrollLecture(2)">Ontology Engineering</a>
+					<p><a href="#" onclick="enrollLecture(3)">Data Mining</a>
+					<p><a href="#" onclick="enrollLecture(4)">Management Information Systems</a>
+					<p><a href="#" onclick="enrollLecture(5)">Test-driven Development</a>
+				</div>
+				
+				<div id="lecture-details" style="display:none">
+					<p><b>Week 1</b><br>
+						Id quod utinam vel, nam sensibus definitionem ei, no sea novum aliquip expetendis.</p>
+					<p><b>Week 2</b><br>
+						Ad esse noluisse per, vitae commune eos no.</p>
+					<p><b>Week 3</b><br>
+						At eam audiam hendrerit, wisi corrumpit urbanitas duo et.</p>
+					<p><b>Week 4</b><br>
+						Ad tollit alterum ponderum vix, ne vis oratio copiosae, doctus epicurei cum cu.</p>
+					<p><b>Week 5</b><br>
+						In vis similique dissentiet reformidans, vis malis eripuit accusam ad.</p>
+				</div>
+				
+				<div id="enrollment" style="display:none">
+					Enrollment key <input type="text" id="txt-enroll">
+					<button onclick="enroll()">Enroll me</button>
 				</div>
 
 			</div>
